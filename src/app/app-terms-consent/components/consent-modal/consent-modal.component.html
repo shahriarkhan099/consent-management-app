@@ -1,0 +1,40 @@
+<div class="modal-container">
+  <h2 class="modal-title">
+    Please read the Company Contract before proceeding
+  </h2>
+  <div class="contract-content">
+    <mat-dialog-content>
+      <div class="contract-text">
+        <strong>Company Contract</strong><br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
+        ligula felis euismod semper. Nullam quis risus eget urna mollis ornare
+        vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis
+        mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+        odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere
+        velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia
+        bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis
+        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac,
+        vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl
+        consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+        condimentum nibh, ut fermentum massa justo sit amet risus.<br /><br />
+        ... (repeat the text or add more to simulate a large contract) ...
+      </div>
+    </mat-dialog-content>
+    <div class="checkbox-container">
+      <mat-checkbox [(ngModel)]="consentGiven">
+        I have read and agree with the Company Contract
+      </mat-checkbox>
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="!consentGiven"
+      (click)="onConsent()"
+    >
+      Next
+    </button>
+  </div>
+</div>
